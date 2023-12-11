@@ -2,38 +2,36 @@
 #Sia
 #Generic script
 
+#import math to use the sqrt function
 import math
 
 #interact with user to get input
 print ("This program give you the sqrt of 2 numbers you specify.")
-num1=int(input ("Enter the 1st number: "))
-num2=int(input ("Enter the 2nd number: "))
-response=input ("Enter Y/y to add or N/n to exit the program: ")
 
-sqnum1=int(math.sqrt(num1))
-sqnum2=int(math.sqrt(num2))
+#wrap it in int to make sure user enters integers only.
+num1=int(input ("Enter the 1st integer: "))
+num2=int(input ("Enter the 2nd integer: "))
+response=input ("Enter Y/y to math or N/n to exit the program: ")
 
+#verifying user input
 print ("You entered: ", num1, num2, response)
-print ("The sqr root of num1 is: ", sqnum1)
-print ("The sqr root of num2 is: ", sqnum2)
 
-#create loop to check to run or exit program
-#response="y" #set value to y to troubleshoot manually
+
+#create loop to run or exit program
+#check to make sure user doesn't enter zeroes then run program; if zeroes exit
 
 if ( response == "Y"  or response == "y" ) and ( num1 != 0 and num2 != 0 ) :
 
-   print ("Your response was: ", response)
-   #check to make sure user doesn't enter zeroes then run program; if zeroes exit
-   #if  num1 != 0 or num2 != 0 :
+   #print ("Your response was: ", response)
+
+   sqnum1=int(math.sqrt(num1))
+   sqnum2=int(math.sqrt(num2))
+   print ("The sqr root of num1 is: ", sqnum1)
+   print ("The sqr root of num2 is: ", sqnum2)
    yourtotal=num1+num2
    print ("Your total is: ", yourtotal )
    print ("Bye!")
    
-  
-#elif num1 == 0 or num2 == 0 :
-    #if user enters zeroes exit
- #    print ("You entered zeroes... exiting program.")
-  
 #Do a last check for user entering N/n
 
 elif response == "N" or response == "n" :
@@ -41,4 +39,4 @@ elif response == "N" or response == "n" :
     exit
 
 else:
-   print("buh bye")    
+   print("Toodeloo! You entered zeroes and Y/y.")    
